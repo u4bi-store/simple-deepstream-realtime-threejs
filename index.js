@@ -215,7 +215,8 @@ function addBox(){
 
 function removeBox(){
     alert('remove btn');
-
+    remove(cube[cube.length-1].name);
+    
 }
 
 function allRemove(){
