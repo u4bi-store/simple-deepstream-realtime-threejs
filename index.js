@@ -107,6 +107,10 @@ function init(){
         // dynamic record remove event
         items.on('entry-removed', function(recordName, index){
             console.log('remove ', recordName, index);
+            
+            cube.forEach(function(e){
+                if( e.name === recordName) scene.remove(e);
+            })
 
         });        
 
