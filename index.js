@@ -17,8 +17,7 @@ function init(){
     scene.add(new THREE.AxisHelper(3));
 
     // plane
-    var geometry2 = new THREE.PlaneGeometry(6, 6), material2 = new THREE.MeshPhongMaterial({color: 0xFFFFFF});
-    var plane = new THREE.Mesh(geometry2, material2);
+    var plane = new THREE.Mesh(new THREE.PlaneGeometry(6, 6), new THREE.MeshPhongMaterial({color: 0xFFFFFF}));
     scene.add(plane);
     plane.rotateX(-Math.PI/2);
     //
