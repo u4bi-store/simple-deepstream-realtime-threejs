@@ -206,9 +206,11 @@ function remove(content){
 
 
 
-
+/* view button */
 function addBox(){
     alert('add btn');
+    add('선물', { x : 0, y : 0, z : 0 });
+
 }
 
 function removeBox(){
