@@ -2,7 +2,8 @@ var scene,
     camera,
     renderer;
 
-var mesh;
+var mesh,
+    cube = [];
 
 var 
     client = deepstream('localhost:6020'),
@@ -56,7 +57,17 @@ function init(){
     document.getElementById('container').appendChild(renderer.domElement);
 
     window.addEventListener('resize', resize);
-    render();    
+    render();
+
+
+    create('TEST-UUID123', {
+        position : {
+            x : 0,
+            y : 0,
+            z : 0
+        }
+    });
+
 }
 
 
@@ -72,4 +83,20 @@ function render(){
     requestAnimationFrame(render);
     renderer.render(scene, camera);
 
+}
+
+
+
+
+
+
+// mesh setup
+function create(name, data){
+    var 
+        object = mesh.clone();
+
+    object.position.set(data.position.x , data.position.y, data.position.z);
+    scene.add(object);
+    cube.push(object);
+    object.name = name;
 }
