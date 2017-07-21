@@ -2,6 +2,8 @@ var scene,
     camera,
     renderer;
 
+var mesh;
+
 
 window.onload = init;
 
@@ -28,6 +30,10 @@ function init(){
     light.position.set(0, 3, 0);
     scene.add(light);
     //
+
+    
+    mesh = new THREE.Mesh( new THREE.BoxGeometry(.3, .3, .3), new THREE.MeshBasicMaterial( { color: 0x00FFFF, wireframe : true } ));
+    console.log(mesh);
 
     renderer = new THREE.WebGLRenderer();
     renderer.setClearColor(new THREE.Color(0xFF00FF));
