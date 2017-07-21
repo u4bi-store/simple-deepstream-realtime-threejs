@@ -59,6 +59,13 @@ function init(){
 
             e.getEntries().forEach(function(entry){
                 console.log(entry);
+
+
+                // get entry record
+                client.record.getRecord(entry).whenReady(function(e){
+                    console.log(e.get());
+                });
+
             });
 
         });
