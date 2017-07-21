@@ -51,17 +51,17 @@ function init(){
         items.whenReady(function(e){
 
             // TEST ADD FUNCTION
-            // add('선물', {
-            //     x : 0,
-            //     y : 0,
-            //     z : 0
-            // });
+            add('선물', {
+                x : 0,
+                y : 0,
+                z : 0
+            });
 
             e.getEntries().forEach(function(entry){
                 console.log(entry);
 
                 // TEST REMOVE FUNCTION
-                remove(entry);
+                // remove(entry);
 
                 // get entry record
                 client.record.getRecord(entry).whenReady(function(e){
