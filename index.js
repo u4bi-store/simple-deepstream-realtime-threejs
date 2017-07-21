@@ -198,3 +198,16 @@ function remove(content){
     items.removeEntry(content);
 
 }
+
+
+
+
+
+function addBox(){
+    alert('add btn');
+}
+
+function removeBox(){
+    alert('remove btn');
+
+}
