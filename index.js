@@ -60,13 +60,18 @@ function init(){
     render();
 
 
-    create('TEST-UUID123', {
+    // TEST MESH
+    var box = create('TEST-UUID123', {
         position : {
             x : 0,
             y : 0,
             z : 0
         }
     });
+
+    scene.add(box);
+    cube.push(box);
+    //
 
 }
 
@@ -96,7 +101,6 @@ function create(name, data){
         object = mesh.clone();
 
     object.position.set(data.position.x , data.position.y, data.position.z);
-    scene.add(object);
-    cube.push(object);
     object.name = name;
+    return object;
 }
