@@ -215,3 +215,13 @@ function removeBox(){
     alert('remove btn');
 
 }
+
+function allRemove(){
+    alert('allRemove');
+
+    items.getEntries().forEach(function(entry){
+        console.log(entry);
+        remove(entry);
+    });
+    
+}
