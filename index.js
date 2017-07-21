@@ -18,9 +18,16 @@ function init(){
 
     // plane
     var geometry2 = new THREE.PlaneGeometry(6, 6), material2 = new THREE.MeshPhongMaterial({color: 0xFFFFFF});
-    plane = new THREE.Mesh(geometry2, material2);
+    var plane = new THREE.Mesh(geometry2, material2);
     scene.add(plane);
-    plane.rotateX(-Math.PI/2);    
+    plane.rotateX(-Math.PI/2);
+    //
+
+
+    // light
+    var light = new THREE.SpotLight(0xFF0000, 1);
+    light.position.set(0, 3, 0);
+    scene.add(light);
     //
 
     renderer = new THREE.WebGLRenderer();
