@@ -16,6 +16,13 @@ function init(){
 
     scene.add(new THREE.AxisHelper(3));
 
+    // plane
+    var geometry2 = new THREE.PlaneGeometry(6, 6), material2 = new THREE.MeshPhongMaterial({color: 0xFFFFFF});
+    plane = new THREE.Mesh(geometry2, material2);
+    scene.add(plane);
+    plane.rotateX(-Math.PI/2);    
+    //
+
     renderer = new THREE.WebGLRenderer();
     renderer.setClearColor(new THREE.Color(0xFF00FF));
     renderer.setSize(window.innerWidth, window.innerHeight);
@@ -30,7 +37,7 @@ function resize(){
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
-    
+
 }
 
 
