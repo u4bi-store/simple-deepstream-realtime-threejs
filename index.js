@@ -51,17 +51,17 @@ function init(){
         items.whenReady(function(e){
 
             // TEST ADD FUNCTION
-            add('선물', {
-                x : 5,
-                y : 5,
-                z : 5
-            });
+            // add('선물', {
+            //     x : 0,
+            //     y : 0,
+            //     z : 0
+            // });
 
             e.getEntries().forEach(function(entry){
                 console.log(entry);
 
                 // TEST REMOVE FUNCTION
-                remove(entry);
+                // remove(entry);
 
                 // get entry record
                 client.record.getRecord(entry).whenReady(function(e){
@@ -87,6 +87,17 @@ function init(){
             console.log('add ', recordName, index);
 
             client.record.getRecord(recordName).whenReady(function(e){
+                /** console test
+                    
+                    add('선물', { x : 0, y : 5, z : 0 })
+
+                */
+                // create mesh box
+                var 
+                    box = create(recordName, e.get());
+                    
+                scene.add(box);
+                cube.push(box);
 
             });
 
