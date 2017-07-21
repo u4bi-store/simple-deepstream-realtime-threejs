@@ -64,6 +64,14 @@ function init(){
                 // get entry record
                 client.record.getRecord(entry).whenReady(function(e){
                     console.log(e.get());
+
+                    // create mesh box
+                    var 
+                        box = create(entry, e.get());
+                        
+                    scene.add(box);
+                    cube.push(box);
+
                 });
 
             });
