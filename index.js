@@ -48,6 +48,21 @@ function init(){
         /* item record */
         items = client.record.getList('TEST-ITEMS');
 
+        items.whenReady(function(e){
+
+            // TEST ADD FUNCTION
+            add('선물', {
+                x : 0,
+                y : 0,
+                z : 0
+            });
+
+            e.getEntries().forEach(function(entry){
+                console.log(entry);
+            });
+
+        });
+
     });
 
 
@@ -61,16 +76,16 @@ function init(){
 
 
     // TEST MESH
-    var box = create('TEST-UUID123', {
-        position : {
-            x : 0,
-            y : 0,
-            z : 0
-        }
-    });
-
-    scene.add(box);
-    cube.push(box);
+    // var box = create('TEST-UUID123', {
+    //     position : {
+    //         x : 0,
+    //         y : 0,
+    //         z : 0
+    //     }
+    // });
+    
+    // scene.add(box);
+    // cube.push(box);
     //
 
 }
@@ -103,4 +118,24 @@ function create(name, data){
     object.position.set(data.position.x , data.position.y, data.position.z);
     object.name = name;
     return object;
+}
+
+
+
+
+// deppstream record add
+function add(content, position){
+    var 
+        uid = new Date().getTime();
+
+    items.addEntry('TEST-ITEMS'+uid);
+
+    var 
+        addRecord = client.record.getRecord('TEST-ITEMS'+uid);
+
+    addRecord.set({
+        content : content,
+        position : position
+    });
+
 }
