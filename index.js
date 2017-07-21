@@ -51,17 +51,17 @@ function init(){
         items.whenReady(function(e){
 
             // TEST ADD FUNCTION
-            // add('선물', {
-            //     x : 0,
-            //     y : 0,
-            //     z : 0
-            // });
+            add('선물', {
+                x : 5,
+                y : 5,
+                z : 5
+            });
 
             e.getEntries().forEach(function(entry){
                 console.log(entry);
 
                 // TEST REMOVE FUNCTION
-                // remove(entry);
+                remove(entry);
 
                 // get entry record
                 client.record.getRecord(entry).whenReady(function(e){
@@ -79,6 +79,28 @@ function init(){
             });
 
         });
+
+
+
+        // dynamic record add event
+        items.on('entry-added', function(recordName, index){
+            console.log('add ', recordName, index);
+
+            client.record.getRecord(recordName).whenReady(function(e){
+
+            });
+
+        });
+
+
+        // dynamic record remove event
+        items.on('entry-removed', function(recordName, index){
+            console.log('remove ', recordName, index);
+
+        });        
+
+
+
 
     });
 
