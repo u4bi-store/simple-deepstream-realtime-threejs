@@ -5,7 +5,8 @@ var scene,
 var mesh;
 
 var 
-    client = deepstream('localhost:6020');
+    client = deepstream('localhost:6020'),
+    items; // item record
 
 window.onload = init;
 
@@ -41,6 +42,10 @@ function init(){
     // deepstream connection
     client.login({}, function(success){
         console.log(success);
+
+
+        /* item record */
+        items = client.record.getList('TEST-ITEMS');
 
     });
 
