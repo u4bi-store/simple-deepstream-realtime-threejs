@@ -109,7 +109,10 @@ function init(){
             console.log('remove ', recordName, index);
             
             cube.forEach(function(e){
-                if( e.name === recordName) scene.remove(e);
+                if( e.name === recordName){
+                    scene.remove(e);
+                    cube.splice(index, 1);
+                }
             })
 
         });        
