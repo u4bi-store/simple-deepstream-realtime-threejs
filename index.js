@@ -208,13 +208,16 @@ function remove(content){
 
 /* view button */
 function addBox(){
-    alert('add btn');
-    add('선물', { x : 0, y : 0, z : 0 });
+
+    var rand = function(){
+            return Math.random() * (3 - 0) + 0;
+        };
+
+    add('선물', { x : rand(), y : rand(), z : rand() });
 
 }
 
 function removeBox(){
-    alert('remove btn');
     remove(cube[cube.length-1].name);
     
 }
